@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8411FFB61EEB00EA003C96C9 /* DataDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411FFB51EEB00EA003C96C9 /* DataDateModel.swift */; };
+		841E7DCC1EE8F645003A783E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841E7DCA1EE8F645003A783E /* Realm.framework */; };
+		841E7DCF1EE8F6C9003A783E /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 841E7DCA1EE8F645003A783E /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		841E7DD41EE8FE04003A783E /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8406FE8D1EE8DD39005F8EA0 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		841E7DD81EE9429B003A783E /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 841E7DD71EE9429B003A783E /* info.png */; };
+		84898FFA1EE7906000E731D5 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 84898FF91EE7906000E731D5 /* cancel.png */; };
+		84898FFC1EE7A8E100E731D5 /* HomeOtherCostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84898FFB1EE7A8E100E731D5 /* HomeOtherCostsVC.swift */; };
+		848990021EE803B800E731D5 /* cam.png in Resources */ = {isa = PBXBuildFile; fileRef = 848990011EE803B800E731D5 /* cam.png */; };
+		848990041EE807FE00E731D5 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848990031EE807FE00E731D5 /* MyCustomTableViewCell.swift */; };
+		848990061EE812AD00E731D5 /* MonneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848990051EE812AD00E731D5 /* MonneyModel.swift */; };
+		849C136C1EEA56B400310062 /* MyCustomViewCellOfHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C136A1EEA56B400310062 /* MyCustomViewCellOfHeader.swift */; };
+		849C136D1EEA56B400310062 /* MyCustomViewCellOfHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849C136B1EEA56B400310062 /* MyCustomViewCellOfHeader.xib */; };
+		84B0BA4B1EE63F3C0047912F /* HomeAddDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0BA4A1EE63F3C0047912F /* HomeAddDataVC.swift */; };
+		84B0BA5F1EE680230047912F /* MyCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0BA5D1EE680230047912F /* MyCustomViewCell.swift */; };
+		84B0BA601EE680230047912F /* MyCustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B0BA5E1EE680230047912F /* MyCustomViewCell.xib */; };
+		84B4CE521EE50F3B003ECE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4CE511EE50F3B003ECE67 /* AppDelegate.swift */; };
+		84B4CE571EE50F3B003ECE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B4CE551EE50F3B003ECE67 /* Main.storyboard */; };
+		84B4CE591EE50F3B003ECE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B4CE581EE50F3B003ECE67 /* Assets.xcassets */; };
+		84B4CE5C1EE50F3B003ECE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B4CE5A1EE50F3B003ECE67 /* LaunchScreen.storyboard */; };
+		84B4CE671EE52C87003ECE67 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4CE661EE52C87003ECE67 /* HomeVC.swift */; };
+		84B4CE6C1EE55C33003ECE67 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B4CE6B1EE55C33003ECE67 /* plus.png */; };
+		867E214C28C54417141562A2 /* Pods_ManagerMonney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD409AE49D282CD42CA5CBAB /* Pods_ManagerMonney.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		841E7DC91EE8F526003A783E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				841E7DD41EE8FE04003A783E /* RealmSwift.framework in Embed Frameworks */,
+				841E7DCF1EE8F6C9003A783E /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0439E0286B76D13DFA9C7917 /* Pods-ManagerMonney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManagerMonney.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManagerMonney/Pods-ManagerMonney.debug.xcconfig"; sourceTree = "<group>"; };
+		15583F64661512BE0B7396DB /* Pods-ManagerMonney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManagerMonney.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManagerMonney/Pods-ManagerMonney.release.xcconfig"; sourceTree = "<group>"; };
+		8406FE8C1EE8DD39005F8EA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Library/Developer/Xcode/DerivedData/ManagerMonney-fxhjdydwvecqhregusfxvmmwpyxk/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
+		8406FE8D1EE8DD39005F8EA0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/ManagerMonney-fxhjdydwvecqhregusfxvmmwpyxk/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
+		8411FFB51EEB00EA003C96C9 /* DataDateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDateModel.swift; sourceTree = "<group>"; };
+		841E7DCA1EE8F645003A783E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		841E7DD71EE9429B003A783E /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		84898FF91EE7906000E731D5 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		84898FFB1EE7A8E100E731D5 /* HomeOtherCostsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeOtherCostsVC.swift; sourceTree = "<group>"; };
+		848990011EE803B800E731D5 /* cam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cam.png; sourceTree = "<group>"; };
+		848990031EE807FE00E731D5 /* MyCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCell.swift; sourceTree = "<group>"; };
+		848990051EE812AD00E731D5 /* MonneyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonneyModel.swift; sourceTree = "<group>"; };
+		849C136A1EEA56B400310062 /* MyCustomViewCellOfHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomViewCellOfHeader.swift; sourceTree = "<group>"; };
+		849C136B1EEA56B400310062 /* MyCustomViewCellOfHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCustomViewCellOfHeader.xib; sourceTree = "<group>"; };
+		84B0BA4A1EE63F3C0047912F /* HomeAddDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAddDataVC.swift; sourceTree = "<group>"; };
+		84B0BA5D1EE680230047912F /* MyCustomViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomViewCell.swift; sourceTree = "<group>"; };
+		84B0BA5E1EE680230047912F /* MyCustomViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCustomViewCell.xib; sourceTree = "<group>"; };
+		84B4CE4E1EE50F3A003ECE67 /* ManagerMonney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManagerMonney.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B4CE511EE50F3B003ECE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
+		84B4CE561EE50F3B003ECE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84B4CE581EE50F3B003ECE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		84B4CE5B1EE50F3B003ECE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84B4CE5D1EE50F3B003ECE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		84B4CE661EE52C87003ECE67 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		84B4CE6B1EE55C33003ECE67 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		BD409AE49D282CD42CA5CBAB /* Pods_ManagerMonney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManagerMonney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84B4CE4B1EE50F3A003ECE67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841E7DCC1EE8F645003A783E /* Realm.framework in Frameworks */,
+				867E214C28C54417141562A2 /* Pods_ManagerMonney.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15AA0CB885240FC9F64F1586 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0439E0286B76D13DFA9C7917 /* Pods-ManagerMonney.debug.xcconfig */,
+				15583F64661512BE0B7396DB /* Pods-ManagerMonney.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		841E7DAE1EE8EDFD003A783E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				841E7DCA1EE8F645003A783E /* Realm.framework */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		84B0BA4C1EE6570E0047912F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84B0BA5D1EE680230047912F /* MyCustomViewCell.swift */,
+				84B0BA5E1EE680230047912F /* MyCustomViewCell.xib */,
+				849C136A1EEA56B400310062 /* MyCustomViewCellOfHeader.swift */,
+				849C136B1EEA56B400310062 /* MyCustomViewCellOfHeader.xib */,
+				848990031EE807FE00E731D5 /* MyCustomTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84B4CE451EE50F3A003ECE67 = {
+			isa = PBXGroup;
+			children = (
+				84B4CE501EE50F3A003ECE67 /* ManagerMonney */,
+				84B4CE4F1EE50F3A003ECE67 /* Products */,
+				15AA0CB885240FC9F64F1586 /* Pods */,
+				8DADBC63E3BB77B3EAD1208D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84B4CE4F1EE50F3A003ECE67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84B4CE4E1EE50F3A003ECE67 /* ManagerMonney.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84B4CE501EE50F3A003ECE67 /* ManagerMonney */ = {
+			isa = PBXGroup;
+			children = (
+				841E7DAE1EE8EDFD003A783E /* Realm */,
+				84B4CE6A1EE55C1E003ECE67 /* Image */,
+				84B4CE691EE52CEB003ECE67 /* AppDelagate */,
+				84B4CE631EE52C4B003ECE67 /* MVC */,
+			);
+			path = ManagerMonney;
+			sourceTree = "<group>";
+		};
+		84B4CE631EE52C4B003ECE67 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				84B4CE6D1EE57295003ECE67 /* Model */,
+				84B4CE681EE52CDA003ECE67 /* View */,
+				84B4CE641EE52C4B003ECE67 /* Controller */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		84B4CE641EE52C4B003ECE67 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84B0BA4C1EE6570E0047912F /* Cell */,
+				84B4CE651EE52C4B003ECE67 /* Home */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84B4CE651EE52C4B003ECE67 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84B4CE661EE52C87003ECE67 /* HomeVC.swift */,
+				84B0BA4A1EE63F3C0047912F /* HomeAddDataVC.swift */,
+				84898FFB1EE7A8E100E731D5 /* HomeOtherCostsVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84B4CE681EE52CDA003ECE67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B4CE551EE50F3B003ECE67 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B4CE691EE52CEB003ECE67 /* AppDelagate */ = {
+			isa = PBXGroup;
+			children = (
+				84B4CE511EE50F3B003ECE67 /* AppDelegate.swift */,
+				84B4CE581EE50F3B003ECE67 /* Assets.xcassets */,
+				84B4CE5A1EE50F3B003ECE67 /* LaunchScreen.storyboard */,
+				84B4CE5D1EE50F3B003ECE67 /* Info.plist */,
+			);
+			path = AppDelagate;
+			sourceTree = "<group>";
+		};
+		84B4CE6A1EE55C1E003ECE67 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				841E7DD71EE9429B003A783E /* info.png */,
+				84B4CE6B1EE55C33003ECE67 /* plus.png */,
+				84898FF91EE7906000E731D5 /* cancel.png */,
+				848990011EE803B800E731D5 /* cam.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		84B4CE6D1EE57295003ECE67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				848990051EE812AD00E731D5 /* MonneyModel.swift */,
+				8411FFB51EEB00EA003C96C9 /* DataDateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8DADBC63E3BB77B3EAD1208D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8406FE8C1EE8DD39005F8EA0 /* Realm.framework */,
+				8406FE8D1EE8DD39005F8EA0 /* RealmSwift.framework */,
+				BD409AE49D282CD42CA5CBAB /* Pods_ManagerMonney.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84B4CE4D1EE50F3A003ECE67 /* ManagerMonney */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B4CE601EE50F3B003ECE67 /* Build configuration list for PBXNativeTarget "ManagerMonney" */;
+			buildPhases = (
+				73D81A1D6855A03E6ACB9F58 /* [CP] Check Pods Manifest.lock */,
+				84B4CE4A1EE50F3A003ECE67 /* Sources */,
+				84B4CE4B1EE50F3A003ECE67 /* Frameworks */,
+				84B4CE4C1EE50F3A003ECE67 /* Resources */,
+				701EBEAC7F6F81B9FCFE1A20 /* [CP] Embed Pods Frameworks */,
+				72EF5E007CB1FE5F21EBBAE7 /* [CP] Copy Pods Resources */,
+				8406FE911EE8ED5D005F8EA0 /* ShellScript */,
+				841E7DC91EE8F526003A783E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ManagerMonney;
+			productName = ManagerMonney;
+			productReference = 84B4CE4E1EE50F3A003ECE67 /* ManagerMonney.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84B4CE461EE50F3A003ECE67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = MyStudio;
+				TargetAttributes = {
+					84B4CE4D1EE50F3A003ECE67 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 84RK425W2T;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 84B4CE491EE50F3A003ECE67 /* Build configuration list for PBXProject "ManagerMonney" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84B4CE451EE50F3A003ECE67;
+			productRefGroup = 84B4CE4F1EE50F3A003ECE67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84B4CE4D1EE50F3A003ECE67 /* ManagerMonney */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84B4CE4C1EE50F3A003ECE67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849C136D1EEA56B400310062 /* MyCustomViewCellOfHeader.xib in Resources */,
+				848990021EE803B800E731D5 /* cam.png in Resources */,
+				84898FFA1EE7906000E731D5 /* cancel.png in Resources */,
+				84B4CE5C1EE50F3B003ECE67 /* LaunchScreen.storyboard in Resources */,
+				84B4CE591EE50F3B003ECE67 /* Assets.xcassets in Resources */,
+				84B4CE571EE50F3B003ECE67 /* Main.storyboard in Resources */,
+				84B4CE6C1EE55C33003ECE67 /* plus.png in Resources */,
+				841E7DD81EE9429B003A783E /* info.png in Resources */,
+				84B0BA601EE680230047912F /* MyCustomViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		701EBEAC7F6F81B9FCFE1A20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManagerMonney/Pods-ManagerMonney-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72EF5E007CB1FE5F21EBBAE7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManagerMonney/Pods-ManagerMonney-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73D81A1D6855A03E6ACB9F58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8406FE911EE8ED5D005F8EA0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84B4CE4A1EE50F3A003ECE67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B4CE521EE50F3B003ECE67 /* AppDelegate.swift in Sources */,
+				84B0BA5F1EE680230047912F /* MyCustomViewCell.swift in Sources */,
+				848990061EE812AD00E731D5 /* MonneyModel.swift in Sources */,
+				849C136C1EEA56B400310062 /* MyCustomViewCellOfHeader.swift in Sources */,
+				848990041EE807FE00E731D5 /* MyCustomTableViewCell.swift in Sources */,
+				8411FFB61EEB00EA003C96C9 /* DataDateModel.swift in Sources */,
+				84898FFC1EE7A8E100E731D5 /* HomeOtherCostsVC.swift in Sources */,
+				84B4CE671EE52C87003ECE67 /* HomeVC.swift in Sources */,
+				84B0BA4B1EE63F3C0047912F /* HomeAddDataVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84B4CE551EE50F3B003ECE67 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B4CE561EE50F3B003ECE67 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		84B4CE5A1EE50F3B003ECE67 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B4CE5B1EE50F3B003ECE67 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84B4CE5E1EE50F3B003ECE67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84B4CE5F1EE50F3B003ECE67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84B4CE611EE50F3B003ECE67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0439E0286B76D13DFA9C7917 /* Pods-ManagerMonney.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84RK425W2T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ManagerMonney/Realm",
+				);
+				INFOPLIST_FILE = ManagerMonney/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrtienvu123.ManagerMonney;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		84B4CE621EE50F3B003ECE67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15583F64661512BE0B7396DB /* Pods-ManagerMonney.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84RK425W2T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ManagerMonney/Realm",
+				);
+				INFOPLIST_FILE = ManagerMonney/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrtienvu123.ManagerMonney;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84B4CE491EE50F3A003ECE67 /* Build configuration list for PBXProject "ManagerMonney" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B4CE5E1EE50F3B003ECE67 /* Debug */,
+				84B4CE5F1EE50F3B003ECE67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B4CE601EE50F3B003ECE67 /* Build configuration list for PBXNativeTarget "ManagerMonney" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B4CE611EE50F3B003ECE67 /* Debug */,
+				84B4CE621EE50F3B003ECE67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84B4CE461EE50F3A003ECE67 /* Project object */;
+}
