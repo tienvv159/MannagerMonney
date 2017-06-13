@@ -216,6 +216,7 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
             let dateF = DateFormatter()
             dateF.dateFormat = "EEEE/dd/MM/yyyy"
             monney.date = dateF.date(from: lblDateDetailAddData.text!) ?? Date()
+   //         print(monney.date)
             monney.monney = Double(tfAmount.text!)!
             
             if mySegmented.selectedSegmentIndex == 0 {

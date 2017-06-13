@@ -46,6 +46,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         myTableView.reloadData()
     }
     
+    
     func hendlingTotalMonney() {
         var monneyIncome:Double = 0
         var monneyExpenses:Double = 0
@@ -53,13 +54,11 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         for item in listSecsion{
             monneyIncome += item.tatolIncome
         }
-        
         lblIncome.text = String(format:"%.0f", monneyIncome)
 
         
         for item in listSecsion{
             monneyExpenses += item.tatolCost
-
         }
         lblExpenses.text =  String(format:"%.0f", monneyExpenses)
     }
@@ -205,8 +204,28 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             }else{
                 cell.lblExpenses.text = String(format: "%.0f", monneyIncomeAndExpenses)
             }
-            
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeDetail") as! HomeDetailVC
+
+        vc.date =  listSecsion[indexPath.section].date
+        vc.category = listSecsion[indexPath.section].monneys[indexPath.row - 1].category
+        vc.content = listSecsion[indexPath.section].monneys[indexPath.row - 1].content
+        vc.amount = String(listSecsion[indexPath.section].monneys[indexPath.row - 1].monney)
+        if listSecsion[indexPath.section].monneys[indexPath.row - 1].isIncome {
+            vc.check = true
+        }else{
+            vc.check = false
+        }
+        if let navi = navigationController{
+            if indexPath.row != 0{
+                navi.pushViewController(vc, animated: true)
+            }
         }
     }
     

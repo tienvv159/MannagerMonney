@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8411FFB61EEB00EA003C96C9 /* DataDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411FFB51EEB00EA003C96C9 /* DataDateModel.swift */; };
+		8417A38F1EEE2C0700D980D7 /* HomeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417A38E1EEE2C0700D980D7 /* HomeDetailVC.swift */; };
+		8417A3911EEED53B00D980D7 /* true.png in Resources */ = {isa = PBXBuildFile; fileRef = 8417A3901EEED53B00D980D7 /* true.png */; };
 		841E7DCC1EE8F645003A783E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841E7DCA1EE8F645003A783E /* Realm.framework */; };
 		841E7DCF1EE8F6C9003A783E /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 841E7DCA1EE8F645003A783E /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		841E7DD41EE8FE04003A783E /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8406FE8D1EE8DD39005F8EA0 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -52,6 +54,8 @@
 		8406FE8C1EE8DD39005F8EA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Library/Developer/Xcode/DerivedData/ManagerMonney-fxhjdydwvecqhregusfxvmmwpyxk/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
 		8406FE8D1EE8DD39005F8EA0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/ManagerMonney-fxhjdydwvecqhregusfxvmmwpyxk/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		8411FFB51EEB00EA003C96C9 /* DataDateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDateModel.swift; sourceTree = "<group>"; };
+		8417A38E1EEE2C0700D980D7 /* HomeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDetailVC.swift; sourceTree = "<group>"; };
+		8417A3901EEED53B00D980D7 /* true.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = true.png; sourceTree = "<group>"; };
 		841E7DCA1EE8F645003A783E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		841E7DD71EE9429B003A783E /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		84898FF91EE7906000E731D5 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				84B4CE661EE52C87003ECE67 /* HomeVC.swift */,
 				84B0BA4A1EE63F3C0047912F /* HomeAddDataVC.swift */,
 				84898FFB1EE7A8E100E731D5 /* HomeOtherCostsVC.swift */,
+				8417A38E1EEE2C0700D980D7 /* HomeDetailVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				84B4CE6B1EE55C33003ECE67 /* plus.png */,
 				84898FF91EE7906000E731D5 /* cancel.png */,
 				848990011EE803B800E731D5 /* cam.png */,
+				8417A3901EEED53B00D980D7 /* true.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				84B4CE591EE50F3B003ECE67 /* Assets.xcassets in Resources */,
 				84B4CE571EE50F3B003ECE67 /* Main.storyboard in Resources */,
 				84B4CE6C1EE55C33003ECE67 /* plus.png in Resources */,
+				8417A3911EEED53B00D980D7 /* true.png in Resources */,
 				841E7DD81EE9429B003A783E /* info.png in Resources */,
 				84B0BA601EE680230047912F /* MyCustomViewCell.xib in Resources */,
 			);
@@ -369,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8417A38F1EEE2C0700D980D7 /* HomeDetailVC.swift in Sources */,
 				84B4CE521EE50F3B003ECE67 /* AppDelegate.swift in Sources */,
 				84B0BA5F1EE680230047912F /* MyCustomViewCell.swift in Sources */,
 				848990061EE812AD00E731D5 /* MonneyModel.swift in Sources */,
