@@ -35,17 +35,31 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         lblDateDetailAddData.text = date
         
         arrIncomeAndExpenses = ["ăn uống"," quần áo","thể thao", "đi chơi", "nhà trọ", "điện thoại", "tiền thuốc", "giáo dục", "sức khoẻ", "đi lại", "tiền lương", "làm thêm","tiền thưởng", "chi phí khác"]
-    
-    
-        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         
-        //view.addGestureRecognizer(tap)
+        self.createInputAccessoryView()
+    
     }
     
-    func dismissKeyboard() {
+    func createInputAccessoryView() {
+        let customView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+        customView.backgroundColor = UIColor.groupTableViewBackground
+        tfAccount.inputAccessoryView = customView
+        tfAmount.inputAccessoryView = customView
+        tfContent.inputAccessoryView = customView
+        
+        
+        
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        btn.setTitle("Done", for: .normal)
+        btn.setTitleColor(UIColor.blue, for: .normal)
+        btn.addTarget(self, action: #selector(hendlingBtn), for: .touchUpInside)
+        customView.addSubview(btn)
+
+    }
+    
+    func hendlingBtn() {
         view.endEditing(true)
     }
-    
     
     @IBAction func tapTextfield(_ sender: Any) {
         self.createCollectionView()
