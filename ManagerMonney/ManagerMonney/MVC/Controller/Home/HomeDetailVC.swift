@@ -33,7 +33,6 @@ class HomeDetailVC: UIViewController {
         
         self.showDataInView()
         
-       // print(pathImg!)
     }
     
     func showDataInView() {
@@ -46,17 +45,26 @@ class HomeDetailVC: UIViewController {
         
         lblContent.text = content
         
+        print(amount!)
         lblAmount.text = amount
-    
+        
         if check!{
             imgIncome.image = UIImage(named: "true")
         }else{
             imgExpenses.image = UIImage(named: "true")
         }
-    // print(pathImg)
+        
+      //  print(pathImg)
         
       
-        imgInfomation.image = UIImage(contentsOfFile: pathImg!)
+        let url = URL(string: pathImg!)
+        print(url!)
+        do{
+            let data = try Data(contentsOf: url!)
+            
+            imgInfomation.image = UIImage(data: data)
+
+        }catch{}
     }
 
 }

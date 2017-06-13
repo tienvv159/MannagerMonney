@@ -37,9 +37,9 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         arrIncomeAndExpenses = ["ăn uống"," quần áo","thể thao", "đi chơi", "nhà trọ", "điện thoại", "tiền thuốc", "giáo dục", "sức khoẻ", "đi lại", "tiền lương", "làm thêm","tiền thưởng", "chi phí khác"]
     
     
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         
-        view.addGestureRecognizer(tap)
+        //view.addGestureRecognizer(tap)
     }
     
     func dismissKeyboard() {
@@ -214,12 +214,12 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         
         
         // get url image
+        
         let imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
         let imagePath =  imageURL.lastPathComponent
         localPath = String(describing: NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(imagePath!))
-
-       // print(localPath)
         
+       // print(localPath)
         
         // đóng cửa sổ ảnh đi
         dismiss(animated: true, completion: nil)

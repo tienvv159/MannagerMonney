@@ -216,13 +216,16 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             vc.date =  listSecsion[indexPath.section].date
             vc.category = listSecsion[indexPath.section].monneys[indexPath.row - 1].category
             vc.content = listSecsion[indexPath.section].monneys[indexPath.row - 1].content
-            vc.amount = String(listSecsion[indexPath.section].monneys[indexPath.row - 1].monney)
+            vc.amount = String(format:"%.0f",listSecsion[indexPath.section].monneys[indexPath.row - 1].monney)
+            
             if listSecsion[indexPath.section].monneys[indexPath.row - 1].isIncome {
                 vc.check = true
             }else{
                 vc.check = false
             }
+
             vc.pathImg = listSecsion[indexPath.section].monneys[indexPath.row - 1].imgInfo
+
         }
         if let navi = navigationController{
             if indexPath.row != 0{
