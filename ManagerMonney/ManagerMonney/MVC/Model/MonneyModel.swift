@@ -17,8 +17,7 @@ class MonneyModel : Object{
     dynamic var monney:Double = 0
     
     dynamic var category:String = ""
-    
-    
+        
     dynamic var isIncome:Bool = true
     
     dynamic var imgInfo:String?

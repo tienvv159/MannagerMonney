@@ -25,6 +25,7 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
     var categoryOther:String = ""
     var myCollectionView:UICollectionView!
     var arrIncomeAndExpenses:[String]! = [""]
+    var localPath:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +36,14 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         
         arrIncomeAndExpenses = ["ăn uống"," quần áo","thể thao", "đi chơi", "nhà trọ", "điện thoại", "tiền thuốc", "giáo dục", "sức khoẻ", "đi lại", "tiền lương", "làm thêm","tiền thưởng", "chi phí khác"]
     
+    
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
@@ -166,7 +175,7 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
                 imgPicker.allowsEditing = false // k cho thay doi hinh
                 self.present(imgPicker, animated: true, completion: nil)
             }else{
-                self.showAlert(titleAlert: "notification", titleBtn: "OK", message: "the device has no camera")
+                self.showAlert(titleAlert: "notification", titleBtn: "OK", message: "This device doesn't have a camera!")
             }
         }
         
@@ -182,6 +191,7 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         present(alert, animated: true, completion: nil)
         
     }
+    
     
     // khi chụp ảnh hay chọn từ photo đều gọi về hàm này
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -201,6 +211,16 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         
         // cho imgInfo hiện lên bức ảnh vừa tạo
         imgInfo.image = UIImage(data: imgData)
+        
+        
+        // get url image
+        let imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+        let imagePath =  imageURL.lastPathComponent
+        localPath = String(describing: NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(imagePath!))
+
+       // print(localPath)
+        
+        
         // đóng cửa sổ ảnh đi
         dismiss(animated: true, completion: nil)
     }
@@ -216,8 +236,11 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
             let dateF = DateFormatter()
             dateF.dateFormat = "EEEE/dd/MM/yyyy"
             monney.date = dateF.date(from: lblDateDetailAddData.text!) ?? Date()
-   //         print(monney.date)
+
             monney.monney = Double(tfAmount.text!)!
+            
+            //print(localPath)
+            monney.imgInfo = localPath
             
             if mySegmented.selectedSegmentIndex == 0 {
                 monney.isIncome = false
@@ -247,5 +270,7 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         alert.addAction(btnOK)
         present(alert, animated: true, completion: nil)
     }
+    
+    
 
 }

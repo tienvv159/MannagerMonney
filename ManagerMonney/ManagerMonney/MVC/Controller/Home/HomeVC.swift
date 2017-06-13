@@ -212,15 +212,17 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeDetail") as! HomeDetailVC
-
-        vc.date =  listSecsion[indexPath.section].date
-        vc.category = listSecsion[indexPath.section].monneys[indexPath.row - 1].category
-        vc.content = listSecsion[indexPath.section].monneys[indexPath.row - 1].content
-        vc.amount = String(listSecsion[indexPath.section].monneys[indexPath.row - 1].monney)
-        if listSecsion[indexPath.section].monneys[indexPath.row - 1].isIncome {
-            vc.check = true
-        }else{
-            vc.check = false
+        if indexPath.row != 0 {
+            vc.date =  listSecsion[indexPath.section].date
+            vc.category = listSecsion[indexPath.section].monneys[indexPath.row - 1].category
+            vc.content = listSecsion[indexPath.section].monneys[indexPath.row - 1].content
+            vc.amount = String(listSecsion[indexPath.section].monneys[indexPath.row - 1].monney)
+            if listSecsion[indexPath.section].monneys[indexPath.row - 1].isIncome {
+                vc.check = true
+            }else{
+                vc.check = false
+            }
+            vc.pathImg = listSecsion[indexPath.section].monneys[indexPath.row - 1].imgInfo
         }
         if let navi = navigationController{
             if indexPath.row != 0{

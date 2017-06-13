@@ -27,11 +27,13 @@ class HomeDetailVC: UIViewController {
     var amount:String?
     var content:String?
     var check:Bool?
-    
+    var pathImg:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.showDataInView()
+        
+       // print(pathImg!)
     }
     
     func showDataInView() {
@@ -51,6 +53,10 @@ class HomeDetailVC: UIViewController {
         }else{
             imgExpenses.image = UIImage(named: "true")
         }
+    // print(pathImg)
+        
+      
+        imgInfomation.image = UIImage(contentsOfFile: pathImg!)
     }
 
 }
