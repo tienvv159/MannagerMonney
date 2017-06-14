@@ -656,22 +656,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29m-fL-M93">
-                                        <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
-                                        <connections>
-                                            <action selector="tapTextfield:" destination="q0D-9y-PiP" eventType="touchUpInside" id="0wT-0s-lfC"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="29m-fL-M93" firstAttribute="leading" secondItem="5Oh-bG-mDf" secondAttribute="leading" id="6Av-Eb-KvO"/>
-                                    <constraint firstItem="29m-fL-M93" firstAttribute="top" secondItem="5Oh-bG-mDf" secondAttribute="top" id="DZG-7B-9KN"/>
                                     <constraint firstItem="lwU-IY-5SB" firstAttribute="height" secondItem="5Oh-bG-mDf" secondAttribute="height" id="OFo-GJ-vWw"/>
                                     <constraint firstItem="lwU-IY-5SB" firstAttribute="width" secondItem="5Oh-bG-mDf" secondAttribute="width" id="RTs-U9-zCi"/>
                                     <constraint firstItem="lwU-IY-5SB" firstAttribute="leading" secondItem="5Oh-bG-mDf" secondAttribute="leading" id="boT-vG-qd5"/>
-                                    <constraint firstItem="29m-fL-M93" firstAttribute="height" secondItem="lwU-IY-5SB" secondAttribute="height" id="cLr-7b-z0P"/>
-                                    <constraint firstItem="29m-fL-M93" firstAttribute="width" secondItem="lwU-IY-5SB" secondAttribute="width" id="eBb-l0-zzX"/>
                                     <constraint firstItem="lwU-IY-5SB" firstAttribute="top" secondItem="5Oh-bG-mDf" secondAttribute="top" id="ejH-e1-cum"/>
                                 </constraints>
                             </view>

@@ -159,10 +159,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         return listSecsion[section].monneys.count + 1 // không có header của secsion nên phải +1 để có thêm 1 row chứa secsion
     }
     
-   
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { 
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MyCustomTableViewCell

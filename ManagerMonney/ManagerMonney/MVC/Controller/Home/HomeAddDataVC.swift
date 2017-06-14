@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Foundation
 
 class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
@@ -26,18 +27,34 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
     var myCollectionView:UICollectionView!
     var arrIncomeAndExpenses:[String]! = [""]
     var localPath:String = ""
+    var tag:Int = 0
+    var numberFirstTap:Int?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tfCategory.delegate = self
         tfCategory.text = categoryOther
-        
         lblDateDetailAddData.text = date
+        
+        tfCategory.addTarget(self, action: #selector(createCollectionView), for: .touchDown)
         
         arrIncomeAndExpenses = ["ăn uống"," quần áo","thể thao", "đi chơi", "nhà trọ", "điện thoại", "tiền thuốc", "giáo dục", "sức khoẻ", "đi lại", "tiền lương", "làm thêm","tiền thưởng", "chi phí khác"]
         
+        
+        tfContent.delegate = self
+        tfAmount.delegate = self
+        tfCategory.delegate = self
+        tfAccount.delegate = self
+        
+        tfAccount.tag = 100
+        tfCategory.tag = 101
+        tfAmount.tag = 102
+        tfContent.tag = 103
+        
         self.createInputAccessoryView()
-    
+        
     }
     
     func createInputAccessoryView() {
@@ -47,13 +64,22 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         tfAmount.inputAccessoryView = customView
         tfContent.inputAccessoryView = customView
         
+        let btnBack = UIButton(frame: CGRect(x: 5, y: 5, width: 40, height: 40))
+        btnBack.setImage(UIImage(named:"back.png"), for: .normal)
+        btnBack.addTarget(self, action: #selector(backTextField), for: .touchUpInside)
+
+        let btnNext = UIButton(frame: CGRect(x: 50  , y: 5, width: 40, height: 40))
+        btnNext.setImage(UIImage(named:"next.png"), for: .normal)
+        btnNext.addTarget(self, action: #selector(nextTextField), for: .touchUpInside)
+
+        let btnDone = UIButton(frame: CGRect(x: 100, y: 0, width: 100, height: 50))
+        btnDone.setTitle("Done", for: .normal)
+        btnDone.setTitleColor(UIColor.blue, for: .normal)
+        btnDone.addTarget(self, action: #selector(hendlingBtn), for: .touchUpInside)
         
-        
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        btn.setTitle("Done", for: .normal)
-        btn.setTitleColor(UIColor.blue, for: .normal)
-        btn.addTarget(self, action: #selector(hendlingBtn), for: .touchUpInside)
-        customView.addSubview(btn)
+        customView.addSubview(btnBack)
+        customView.addSubview(btnNext)
+        customView.addSubview(btnDone)
 
     }
     
@@ -61,12 +87,36 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         view.endEditing(true)
     }
     
-    @IBAction func tapTextfield(_ sender: Any) {
-        self.createCollectionView()
+    func nextTextField() {
+        if tag == 100 {
+            self.hendlingBtn()
+            self.createCollectionView()
+        }
+        tag += 1
+        self.view.viewWithTag(tag)?.becomeFirstResponder()
+        
     }
     
+    func backTextField() {
+        if tag == 102 {
+            self.hendlingBtn()
+            self.createCollectionView()
+        }
+        tag -= 1
+        self.view.viewWithTag(tag)?.becomeFirstResponder()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        tag = textField.tag
+        
+    }
+    
+
     
     func createCollectionView() {
+        // không cho textField này hiện bàn phím
+        let dummyView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        tfCategory.inputView = dummyView
         
         viewCollection = UIView(frame: CGRect(x: 0, y: self.view.frame.height / 2, width: self.view.frame.width, height: self.view.frame.height / 2))
         viewCollection.backgroundColor = UIColor.lightGray
@@ -163,6 +213,9 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
             tfCategory.text = arrIncomeAndExpenses[indexPath.item]
             viewCollection.isHidden = true
         }
+        
+        
+        tfAmount.becomeFirstResponder()
     }
     
     @IBAction func btnCamera(_ sender: Any) {
@@ -273,8 +326,6 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         }catch{
             self.showAlert(titleAlert: "notification", titleBtn: "OK", message: "save failed")
         }
-        
-        
     }
     
     func showAlert(titleAlert:String , titleBtn:String , message:String) {
