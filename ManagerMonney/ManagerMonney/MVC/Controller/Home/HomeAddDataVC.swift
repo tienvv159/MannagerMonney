@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Foundation
 
-class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate , HomeOtherCostsDelegate{
 
     @IBOutlet weak var imgInfo: UIImageView!
     @IBOutlet weak var mySegmented: UISegmentedControl!
@@ -28,15 +28,22 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
     var arrIncomeAndExpenses:[String]! = [""]
     var localPath:String = ""
     var tag:Int = 0
-    var numberFirstTap:Int?
+    var image: UIImage?
     
+    var dateDetail:String?
+    var categoryDetail:String?
+    var AccountDetail:String?
+    var AmountDetail:String?
+    var contentDetail:String?
+    var imageDetail:String?
+    
+    var idOfRow:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tfCategory.delegate = self
         tfCategory.text = categoryOther
-        lblDateDetailAddData.text = date
         
         tfCategory.addTarget(self, action: #selector(createCollectionView), for: .touchDown)
         
@@ -54,7 +61,23 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         tfContent.tag = 103
         
         self.createInputAccessoryView()
+        self.hendlingDataDetail()
         
+//        print(idOfRow)
+    }
+    
+    func hendlingDataDetail() {
+        
+        lblDateDetailAddData.text = (date.characters.count > 0) ? date : dateDetail
+        tfCategory.text = categoryDetail ?? ""
+        tfAmount.text = AmountDetail ?? ""
+        tfAccount.text = AccountDetail ?? ""
+        tfContent.text = contentDetail ?? ""
+        
+        let path = File.documentsDirectory as? String ?? ""
+        let url = path + "/" + (imageDetail ?? "")
+        
+        imgInfo.image = UIImage(contentsOfFile: url)
     }
     
     func createInputAccessoryView() {
@@ -205,6 +228,7 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
             
             let vc = storyboard.instantiateViewController(withIdentifier: "HomeOtherCosts") as! HomeOtherCostsVC
             vc.dateOfHomeAddData = lblDateDetailAddData.text!
+            vc.delegate = self
             if let navi = navigationController{
                 navi.pushViewController(vc, animated: true)
             }
@@ -278,13 +302,14 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         
         // cho imgInfo hiện lên bức ảnh vừa tạo
         imgInfo.image = UIImage(data: imgData)
-        
+        image = UIImage(data: imgData)
         
         // get url image
         
-        let imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
-        let imagePath =  imageURL.lastPathComponent
-        localPath = String(describing: NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(imagePath!))
+//        let imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+//        let imagePath =  imageURL.lastPathComponent
+//        
+//        localPath = String(describing: NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(imagePath!))
         
        // print(localPath)
         
@@ -294,38 +319,99 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
     
     @IBAction func btnSaver(_ sender: Any) {
         
-        do{
-            let realm = try Realm()
-            
-            let monney = MonneyModel()
-            monney.category = tfCategory.text!
-            
-            let dateF = DateFormatter()
-            dateF.dateFormat = "EEEE/dd/MM/yyyy"
-            monney.date = dateF.date(from: lblDateDetailAddData.text!) ?? Date()
-
-            monney.monney = Double(tfAmount.text!)!
-            
-            //print(localPath)
-            monney.imgInfo = localPath
-            
-            if mySegmented.selectedSegmentIndex == 0 {
-                monney.isIncome = false
-            }else{
-                monney.isIncome = true
-            }
-            
-            monney.content = tfContent.text!
-            
-            try realm.write {
-                realm.add(monney)
+        if idOfRow != nil {
+            do
+            {
+                let realm = try Realm()
+                let monney = MonneyModel()
+                monney.category = tfCategory.text ?? ""
+                monney.monney = Double(tfAmount.text!) ?? 0
+                monney.id = idOfRow!
+                monney.content = tfContent.text ?? ""
+                if mySegmented.selectedSegmentIndex == 0 {
+                    monney.isIncome = false
+                }else{
+                    monney.isIncome = true
+                }
                 
-                self.showAlert(titleAlert: "notification", titleBtn: "OK", message: "successfully save")
+                try! realm.write {
+                    realm.add(monney, update: true)
+                
+                    let alert = UIAlertController(title: "notification", message: "successfuly save", preferredStyle: .actionSheet)
+                    
+                    let btnOK = UIAlertAction(title: "OK", style: .default, handler: { (btnOK) in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        _ = storyboard.instantiateViewController(withIdentifier: "homeVC")
+                        
+                        if let navi = self.navigationController{
+                            navi.popViewController(animated: true)
+                        }
+                    })
+                    alert.addAction(btnOK)
+                    present(alert, animated: true, completion: nil)
+                }
+
+            }catch{
+                self.showAlert(titleAlert: "notification", titleBtn: "OK", message: "save failed")
             }
-            
-        }catch{
-            self.showAlert(titleAlert: "notification", titleBtn: "OK", message: "save failed")
+
+        }else{
+            do{
+                let realm = try Realm()
+                
+                let monney = MonneyModel()
+                monney.category = tfCategory.text ?? ""
+                
+                let dateF = DateFormatter()
+                dateF.dateFormat = "EEEE/dd/MM/yyyy"
+                monney.date = dateF.date(from: lblDateDetailAddData.text!) ?? Date()
+                
+                monney.monney = Double(tfAmount.text!) ?? 0
+                
+                
+                if let image = image {
+                    let path = File.testSaveImage(image: image)
+                    monney.imgInfo = path ?? ""
+                }
+                
+                if mySegmented.selectedSegmentIndex == 0 {
+                    monney.isIncome = false
+                }else{
+                    monney.isIncome = true
+                }
+                
+                monney.content = tfContent.text ?? ""
+                
+                let dateFF = DateFormatter()
+                dateFF.dateFormat = "YYYYMMDDHHMMSSFFF"
+                let iid = dateFF.string(from: Date())
+                monney.id = Int(iid) ?? 0
+                
+                try realm.write {
+                    realm.add(monney)
+                    
+                    //self.showAlert(titleAlert: "notification", titleBtn: "OK", message: "successfully save")
+                    let alert = UIAlertController(title: "notification", message: "successfuly save", preferredStyle: .actionSheet)
+                    
+                    let btnOK = UIAlertAction(title: "OK", style: .default, handler: { (btnOK) in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        _ = storyboard.instantiateViewController(withIdentifier: "homeVC")
+                        
+                        if let navi = self.navigationController{
+                            navi.popViewController(animated: true)
+                        }
+                    })
+                    alert.addAction(btnOK)
+                    present(alert, animated: true, completion: nil)
+                    
+                }
+                
+            }catch{
+                self.showAlert(titleAlert: "notification", titleBtn: "OK", message: "save failed")
+            }
+
         }
+        
     }
     
     func showAlert(titleAlert:String , titleBtn:String , message:String) {
@@ -336,6 +422,10 @@ class HomeAddDataVC: UIViewController , UICollectionViewDataSource, UICollection
         present(alert, animated: true, completion: nil)
     }
     
-    
+    func editCategoty(text: String?) {
+        tfCategory.text = text
+        viewCollection.isHidden = true
+        tfAmount.becomeFirstResponder()
+    }
 
 }

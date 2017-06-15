@@ -11,6 +11,8 @@ import RealmSwift
 
 import UIKit
 class MonneyModel : Object{
+    
+    dynamic var id:Int = 0
 
     dynamic var date:Date = Date()
     
@@ -23,6 +25,11 @@ class MonneyModel : Object{
     dynamic var imgInfo:String?
     
     dynamic var content:String = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+
 }
 
 

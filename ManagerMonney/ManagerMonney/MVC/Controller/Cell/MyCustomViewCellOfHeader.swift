@@ -10,8 +10,9 @@ import UIKit
 
 class MyCustomViewCellOfHeader: UITableViewCell {
     @IBOutlet weak var lblCategory: UILabel!
-    @IBOutlet weak var lblExpenses: UILabel!
-    @IBOutlet weak var lblIncome: UILabel!
+    
+    @IBOutlet weak var lblMonney: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
